@@ -1,0 +1,74 @@
+
+
+<div class="container p-5">
+
+  <div class="row no-gutters">
+    <div class="col-xs-12">
+      <h3>Databinding (<a href="https://github.com/jelkada/databinding" target="_blank">see on github</a>)</h3>
+    </div>
+  </div>
+
+  <hr class=""/>
+
+  <div class="row no-gutters">
+    <div class="col-xs-12">
+
+      <p class="mb-2">1 way data-binding using string interpolation <span ngNonBindable>{{ city }}</span> :</p>
+      <p>My city is: {{ city }}.</p>
+
+      <hr class=""/>
+
+      <p class="mb-2">1 way proprty binding using [style.color]='color' or [class]='primaryButton' :</p>
+      <p [style.color]="color">This paragraph element is blue.</p>
+      <button [class]='primaryButton'>Example</button>
+
+      <hr class=""/>
+
+      <p class="mb-2">2 way data-binding using the directive [(ngModel)] :</p>
+      <input  [(ngModel)]="username1">
+      <p>Hello {{username1}}!</p>
+
+      <hr class=""/>
+
+      <p class="mb-2">2 way data-binding using event binding (input)="username2 = $event.target.value" :</p>
+      <input [value]="username2" (click)="username2 = $event.target.value">
+      <p>Hello {{username2}}!</p>
+
+      <hr class=""/>
+
+      <p class="mb-2">Double click anywhere to trigger the @HostListener of the app component</p>
+
+
+    </div>
+  </div>
+  
+
+  <hr class="mt-3"/>
+
+  <div class="row no-gutters">
+    <div class="col-xs-12 ng-non-bindable">
+      <h4 class="mt-3">Data binding in Angular:</h4>
+      <ul>
+        <li>Data binding refers to the idea of data synchronization between the model and the view.</li>
+        <li>When the data changes its value, the UI elements that are bound to the data will also change automatically.</li>
+        <li>Angular handles data binding by synchronizing the state of the view/UI with the data in the component.</li>
+        <li>Data-binding can be one-way, where a change in the model state affects the view, or two-way, where a change from the view affects the model.</li>
+        <li>Types of bindings are supported by Angular are: string interpolation, property binding, event binding and two-way binding.</li>
+      </ul>
+      <h4 class="mt-3">Usage:</h4>
+      <ul>
+        <li>Import NgModule and FormsModule in app.module.ts<br/>import &#123; NgModule &#125; from '@angular/core';<br/>import &#123; FormsModule &#125; from '@angular/forms';</li>
+        <li>Declare the FormsModule in the imports section of the @NgModule decorator <br/>imports: [ FormsModule ]</li>
+        <li>Use double curly brackets to bind one-way using string interpolation. Ex: <span ngNonBindable>{{ city }}</span></li>
+        <li>Use square brackets to bind to property. Ex: [style.color]="color"</li>
+        <li>Use the directive [(ngModel)] for two-way data binding with a UI input element.</li>
+        <li>Square brackets means "evaluate" or get the value from the view, where as the parenthesis means "execute" an event, or update the conmponent from the view.</li>
+        <li>The square brackets [] indicate that the direction of the data is from the component to the view/UI. The parenthesis () indicate that some event will take place and the view will update the data in the the component.</li>
+        <li>The syntax of the two-way binding directive [(ngModel)] is referred to as "banana-in-the-box", which is a reminder that the box/square brackets are on the outside, and the expression with the parenthesis/banana is inside the square brackets.</li>
+        <li>To bind to a DOM event, surround the DOM event name in parentheses and assign a quoted function to it.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
